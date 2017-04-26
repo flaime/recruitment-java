@@ -21,6 +21,16 @@ import com.google.gson.Gson;
 
 public class PersonAPIControll extends HttpServlet
 {
+	
+	/*
+	 * ett första utkast till det hela, där exempelvis post och put inte är implementerade än. 
+	 * Funkar bra med get och med den dummydatan som redan är inlgad per standard (kan ses i DataKeper).
+	 * den parsar också Json filerna något fel enligt spesen men småsaker som kan fixas till senare men visan på ett ungefärligt flöde.
+	 * Sedan till databehållaren skrev jag en egen liten pga att den inte behövde vara "persistently" men som skrivit skulle en databas vara att föredra.
+	 * Har haft väldigt fullt upp med annat så har inte hunnit göra så mycket samt att maven strulade lite för mig i början som tog en del tid.
+	 * Hoppas ni tycker det ser bra ut och att vi får träffas för en vidare intervju! 
+	 */
+	
     private static DataKeper dk;
     
     @Override
@@ -60,6 +70,7 @@ public class PersonAPIControll extends HttpServlet
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
     {
     	String ret = "har kommer jag";
+    	//lite början till inläsning men verligen inte mer än så just nu
 //    	JAXBContext jc;
 //		try {
 //			jc = JAXBContext.newInstance(Person.class);
@@ -79,14 +90,14 @@ public class PersonAPIControll extends HttpServlet
 //			e.printStackTrace();
 //		}
 		
-        resp.setStatus(HttpServletResponse.SC_CREATED);
-        resp.addHeader("Location", "http://127.0.0.1:8080/person/123");
-//        resp.se
+//        resp.setStatus(HttpServletResponse.SC_CREATED);
+//        resp.addHeader("Location", "http://127.0.0.1:8080/person/123");
+    	resp.setStatus(HttpServletResponse.SC_NOT_IMPLEMENTED);
     }
 
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
     {
-        resp.setStatus(HttpServletResponse.SC_ACCEPTED);
+        resp.setStatus(HttpServletResponse.SC_NOT_IMPLEMENTED);
     }
 }
